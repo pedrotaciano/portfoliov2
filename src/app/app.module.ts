@@ -2,14 +2,16 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
-import { HomeComponent } from './home/home.component';
-import { ProfileComponent } from './profile/profile.component';
-import { ContactComponent } from './contact/contact.component';
+import { BodyComponent } from './body/body.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 @NgModule({
-  declarations: [HomeComponent, ProfileComponent, ContactComponent],
+  declarations: [
+    BodyComponent,
+    NavbarComponent
+  ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
-  bootstrap: [HomeComponent],
+  bootstrap: [BodyComponent],
 })
 export class AppModule {}

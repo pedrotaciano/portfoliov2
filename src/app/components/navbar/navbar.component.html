@@ -1,0 +1,7 @@
+<div class="navbar">
+    <ng-container *ngFor="let item of navList">
+        <div (click)="onClickNavItem(item)" [ngClass]="{ link: true, selected: item.selected}" class="link">
+            <p>{{ item.label }}</p>
+        </div>
+    </ng-container>
+</div>

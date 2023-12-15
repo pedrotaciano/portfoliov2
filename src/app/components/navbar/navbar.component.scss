@@ -1,0 +1,26 @@
+.navbar {
+    position: sticky;
+    top: 3.2rem;
+    left: 50%;
+    border-radius: 6rem;
+    background: rgba(232, 229, 228, 0.5);
+    backdrop-filter: blur(8px);
+
+    display: flex;
+    width: fit-content;
+    padding: .6rem;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+
+    .link {
+        background: var(--background);
+        border-radius: 60px;
+        padding: 1.5rem 2.5rem;
+        
+        a {
+            font-size: 1.4rem;
+            line-height: 1.5rem;
+        }
+    }
+}

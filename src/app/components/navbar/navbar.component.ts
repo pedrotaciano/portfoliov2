@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { NavItem } from '../../models/nav';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -24,10 +26,19 @@ export class NavbarComponent {
     },
   ];
 
+  constructor(private router: Router) {}
+
   onClickNavItem(navItem: NavItem) {
-    this.navList.forEach(item => {
-      item.selected = false;
-    });
+    this.changeSelectedNavItem(navItem);
+    this.changeRoute(navItem.path);
+  }
+
+  changeSelectedNavItem(navItem: NavItem) {
+    this.navList.forEach(item => item.selected = false);
     navItem.selected = true;
+  }
+
+  changeRoute(path: string) {
+    this.router.navigate([path]);
   }
 }

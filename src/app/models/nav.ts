@@ -1,4 +1,4 @@
-interface NavItem {
+export interface NavItem {
     label: string;
     path: string;
     selected: boolean;

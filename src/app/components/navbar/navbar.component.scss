@@ -2,6 +2,7 @@
     position: sticky;
     top: 3.2rem;
     left: 50%;
+    transform: translateX(-50%);
     border-radius: 6rem;
     background: rgba(232, 229, 228, 0.5);
     backdrop-filter: blur(8px);
@@ -14,13 +15,21 @@
     gap: 1rem;
 
     .link {
-        background: var(--background);
         border-radius: 60px;
         padding: 1.5rem 2.5rem;
+        cursor: pointer;
+        transition: all .2s ease-in-out;
+
+        &.selected {
+            background: var(--background);
+        }
+
+        &:hover:not(.selected) {
+            background: var(--background-dark);
+        }
         
-        a {
-            font-size: 1.4rem;
-            line-height: 1.5rem;
+        p {
+            font-size: 1.5rem;
         }
     }
 }

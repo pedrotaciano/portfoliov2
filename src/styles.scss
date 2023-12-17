@@ -1,17 +1,31 @@
+@font-face {
+  font-family: "Helvetica Neue LT Pro";
+  font-weight: 400;
+  src: url("./assets/fonts/HelveticaNeueLTProRoman.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Helvetica Neue LT Pro";
+  font-weight: 500;
+  src: url("./assets/fonts/HelveticaNeueLTProMd.otf") format("opentype");
+}
+
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 
-    font-size: 62.5%;
-    text-decoration: none;
-    color: var(--dark-grey);
+  font-size: 62.5%;
 
-    --background: #FCFDFE;
-    --dark-grey: #1e1e1e
+  --background: #fcfdfe;
+  --background-dark: #e8e5e4;
+  --dark-grey: #1e1e1e;
 }
 
 body {
-    font-family: 'Inter', sans-serif;
-    background: var(--background);
+  font-family: "Helvetica Neue LT Pro", "Inter", sans-serif;
+  text-decoration: none;
+  color: var(--dark-grey);
+
+  background: var(--background);
 }

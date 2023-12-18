@@ -30,3 +30,50 @@ body {
 
   background: var(--background);
 }
+
+.fade-in-sm {
+  animation: fadeIn 0.7s ease-in-out forwards;
+  will-change: opacity;
+}
+
+.fade-in-md {
+  animation: fadeIn 1s ease-in-out forwards;
+  will-change: opacity;
+}
+
+.fade-in-lg {
+  animation: fadeIn 1.2s ease-in-out forwards;
+  will-change: opacity;
+}
+
+.delay-sm {
+  opacity: 0;
+  animation-delay: .08s;
+}
+
+.delay-md {
+  opacity: 0;
+  animation-delay: .2s;
+}
+
+.delay-lg {
+  opacity: 0;
+  animation-delay: .5s;
+}
+
+.delay-xl {
+  opacity: 0;
+  animation-delay: .8s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(9rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

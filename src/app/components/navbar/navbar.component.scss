@@ -1,31 +1,53 @@
 .navbar {
-    position: sticky;
-    top: 3.2rem;
-    left: 50%;
-    display: flex;
-    width: fit-content;
-    padding: .5rem;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
+  position: sticky;
+  z-index: 1000;
+  top: 3.2rem;
+  left: 50%;
+  transform: translateX(-50%);
 
-    transform: translateX(-50%);
+  display: flex;
+  width: fit-content;
+  padding: 0.5rem;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+
+  border-radius: 6rem;
+  background: rgba(232, 229, 228, 0.5);
+  backdrop-filter: blur(16px);
+
+  opacity: 0;
+  animation: fadeInTop 0.5s ease-in-out forwards;
+  animation-delay: 0.6s;
+  will-change: opacity;
+
+  .link {
     border-radius: 6rem;
-    background: rgba(232, 229, 228, 0.5);
-    backdrop-filter: blur(16px);
+    padding: 1.2rem 3rem;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+    will-change: background;
 
-    .link {
-        border-radius: 6rem;
-        padding: 1.2rem 3rem;
-        cursor: pointer;
-        transition: all .2s ease-in-out;
-
-        &.selected {
-            background: var(--background);
-        }
-        
-        p {
-            font-size: 1.5rem;
-        }
+    &.selected {
+      background: var(--background);
     }
+
+    p {
+      font-size: 1.5rem;
+    }
+  }
+}
+
+@keyframes fadeInTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-2rem);
+    transform: translateX(-50%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    transform: translateX(-50%);
+  }
 }

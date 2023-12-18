@@ -2,30 +2,26 @@
     position: sticky;
     top: 3.2rem;
     left: 50%;
-    transform: translateX(-50%);
-    border-radius: 6rem;
-    background: rgba(232, 229, 228, 0.5);
-    backdrop-filter: blur(8px);
-
     display: flex;
     width: fit-content;
-    padding: .6rem;
+    padding: .5rem;
     justify-content: center;
     align-items: center;
     gap: 1rem;
 
+    transform: translateX(-50%);
+    border-radius: 6rem;
+    background: rgba(232, 229, 228, 0.5);
+    backdrop-filter: blur(16px);
+
     .link {
-        border-radius: 60px;
-        padding: 1.4rem 2.5rem;
+        border-radius: 6rem;
+        padding: 1.2rem 3rem;
         cursor: pointer;
         transition: all .2s ease-in-out;
 
         &.selected {
             background: var(--background);
-        }
-
-        &:hover:not(.selected) {
-            background: var(--background-dark);
         }
         
         p {

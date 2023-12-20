@@ -18,7 +18,7 @@
     z-index: 1;
     padding: 2rem;
 
-    .card__title p {
+    .card__header__title p {
       font-size: 1.8rem;
       color: var(--background);
 
@@ -27,7 +27,7 @@
       transition: all 0.2s ease-out;
     }
 
-    .card__button {
+    .card__header__button {
       background: var(--orange);
       padding: 2rem;
       border-radius: 100%;
@@ -65,10 +65,10 @@
     }
 
     .card__header {
-      .card__title p {
+      .card__header__title p {
         opacity: 1;
       }
-      .card__button {
+      .card__header__button {
         opacity: 1;
         transform: translate(0) scale(1);
       }

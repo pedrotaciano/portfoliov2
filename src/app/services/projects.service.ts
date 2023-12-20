@@ -56,7 +56,7 @@ export class ProjectsService {
     },
     {
       id: 'pine-dashboard',
-      title: 'Pine Dashboard',
+      title: 'Banco Pine',
       tags: ['UI/UX', 'Development'],
       isLocked: false,
       isHidden: false,

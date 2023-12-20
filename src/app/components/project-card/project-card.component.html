@@ -1,15 +1,18 @@
-<div class="card fade-in-sm delay-md">
+<div (click)="onClickCard()" [ngClass]="{ 'locked': project.isLocked }" class="card fade-in-sm delay-md">
     <div class="card__header">
         <div class="card__header__title">
             <p>{{ project.title }}</p>
         </div>
-        <div class="card__header__button">
-            <a [routerLink]="['/project', project.id]">
+        <div [ngClass]="{ 'shake-aniation': shakeIcon, 'card__header__button': true }">
+            <a *ngIf="!project.isLocked" [routerLink]="['/project', project.id]">
                 <img src="assets/icons/arrow.svg " alt="arrow">
             </a>
+            <img *ngIf="project.isLocked" src="assets/icons/lock.svg " alt="lock">
         </div>
     </div>
     <div class="card__image">
         <img [src]="'assets/images/projects/' + project.id + '/thumbnail.png'" alt="project thumbnail" />
     </div>
 </div>
+
+<pre>{{shakeIcon}}</pre>

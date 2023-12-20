@@ -9,7 +9,7 @@ import { min } from 'rxjs';
 export class BodyComponent implements AfterViewInit {
 
   ngAfterViewInit(): void {
-    this.setFontSize();
+    // this.setFontSize();
   }
 
   setFontSize() {

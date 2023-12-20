@@ -1,18 +1,18 @@
 .navbar {
   position: sticky;
   z-index: 1000;
-  top: 3.2rem;
+  top: 32px;
   left: 50%;
   transform: translateX(-50%);
 
   display: flex;
   width: fit-content;
-  padding: 0.5rem;
+  padding: 5px;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
+  gap: 10px;
 
-  border-radius: 6rem;
+  border-radius: 60px;
   background: rgba(232, 229, 228, 0.5);
   backdrop-filter: blur(16px);
 
@@ -22,8 +22,8 @@
   will-change: opacity;
 
   .link {
-    border-radius: 6rem;
-    padding: 1.2rem 3rem;
+    border-radius: 60px;
+    padding: 12px 30px;
     cursor: pointer;
     transition: all 0.5s ease-in-out;
     will-change: background;
@@ -33,7 +33,7 @@
     }
 
     p {
-      font-size: 1.5rem;
+      font-size: 15px;
     }
   }
 }
@@ -41,7 +41,7 @@
 @keyframes fadeInTop {
   0% {
     opacity: 0;
-    transform: translateY(-2rem);
+    transform: translateY(-20);
     transform: translateX(-50%);
   }
 

@@ -13,8 +13,15 @@ export class BodyComponent implements AfterViewInit {
   }
 
   setFontSize() {
-    let res: number = window.innerWidth / 30.72;
-    res = Math.max(res, 40);
-    document.documentElement.style.fontSize = `${res}%`;
+    const windowWidth = window.innerWidth;
+    const minFontSize = 40;
+    const maxFontSize = 62.5;
+    const magicNumber = 30.72;
+    
+    let fontSize = windowWidth / magicNumber;
+    fontSize = Math.max(fontSize, minFontSize);
+    fontSize = Math.min(fontSize, maxFontSize);
+    
+    document.documentElement.style.fontSize = `${fontSize}%`;
   }
 }

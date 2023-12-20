@@ -14,13 +14,37 @@ export class ProjectsService {
       isHidden: false,
       createdOn: new Date('2023-11-01'),
     },
+    {
+      id: 'grippy',
+      title: 'Grippy',
+      tags: ['UI/UX', 'Development', 'Branding'],
+      isLocked: true,
+      isHidden: false,
+      createdOn: new Date('2024-01-01')
+    },
+    {
+      id: 'keno',
+      title: 'Keno',
+      tags: ['UI/UX', 'Development', 'Branding'],
+      isLocked: true,
+      isHidden: false,
+      createdOn: new Date('2022-01-01'),
+    },
+    {
+      id: 'hora-de-comer',
+      title: 'Hora de Comer',
+      tags: ['UI/UX'],
+      isLocked: false,
+      isHidden: false,
+      createdOn: new Date('2022-06-01'),
+    },
     // {
-    //   id: 'pine-dashboard',
-    //   title: 'Pine Dashboard',
+    //   id: 'pauliceia',
+    //   title: 'Pauliceia',
     //   tags: ['UI/UX', 'Development'],
     //   isLocked: false,
     //   isHidden: false,
-    //   createdOn: new Date('2021-09-01')
+    //   createdOn: new Date('2023-12-01'),
     // },
     {
       id: 'sinco',
@@ -31,13 +55,21 @@ export class ProjectsService {
       createdOn: new Date('2023-12-01'),
     },
     {
-      id: 'app-pine',
-      title: 'App Pine',
-      tags: ['UI/UX'],
+      id: 'pine-dashboard',
+      title: 'Pine Dashboard',
+      tags: ['UI/UX', 'Development'],
       isLocked: false,
       isHidden: false,
-      createdOn: new Date('2021-06-01'),
-    },
+      createdOn: new Date('2021-09-01'),
+    }
+    // {
+    //   id: 'app-pine',
+    //   title: 'App Pine',
+    //   tags: ['UI/UX'],
+    //   isLocked: false,
+    //   isHidden: false,
+    //   createdOn: new Date('2021-06-01'),
+    // },
   ];
 
   getProjects(): Project[] {

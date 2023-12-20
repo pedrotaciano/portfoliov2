@@ -2,12 +2,14 @@
   font-family: "Helvetica Neue LT Pro";
   font-weight: 400;
   src: url("./assets/fonts/HelveticaNeueLTProRoman.otf") format("opentype");
+  font-display: swap;
 }
 
 @font-face {
   font-family: "Helvetica Neue LT Pro";
   font-weight: 500;
   src: url("./assets/fonts/HelveticaNeueLTProMd.otf") format("opentype");
+  font-display: swap;
 }
 
 * {

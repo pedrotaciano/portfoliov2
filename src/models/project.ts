@@ -1,8 +1,16 @@
-export interface Project {
+export type Project = {
     id: string;
     title: string;
-    tags: string[];
+    description: string;
+    tags: ETags[];
+    imagesUrls: string[];
     isLocked: boolean;
     isHidden: boolean;
     createdOn: Date;
+}
+
+export enum ETags {
+    UIUX = 'UI/UX',
+    Development = 'Development',
+    Branding = 'Branding',
 }

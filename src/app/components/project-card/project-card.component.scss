@@ -85,10 +85,23 @@
       }
     }
   }
+
 }
 
-::ng-deep .shake-animation {
-  animation: shake 0.8s linear !important;
+.mobile-title {
+  display: none;
+
+  @media (max-width: 768px) {
+    display: block;
+    padding-top: 1rem;
+    font-size: 1.4rem;
+  }
+}
+
+.shake-animation {
+  img {
+    animation: shake 0.8s forwards cubic-bezier(0.075, 0.82, 0.165, 1);
+  }
 }
 
 @keyframes shake {
@@ -98,4 +111,8 @@
   50% {
     transform: rotate(45deg);
   }
+}
+
+.hidden {
+  display: none;
 }

@@ -9,6 +9,7 @@ import { HomeComponent } from './home/home.component';
 import { ProfileComponent } from './profile/profile.component';
 import { ProjectCardComponent } from './components/project-card/project-card.component';
 import { ProjectDetailsComponent } from './project-details/project-details.component';
+import { ProjectsFilterComponent } from './components/projects-filter/projects-filter.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ProjectDetailsComponent } from './project-details/project-details.compo
     HomeComponent,
     ProfileComponent,
     ProjectCardComponent,
-    ProjectDetailsComponent
+    ProjectDetailsComponent,
+    ProjectsFilterComponent
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],

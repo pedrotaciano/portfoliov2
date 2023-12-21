@@ -1,0 +1,9 @@
+<div class="tag-wrapper">
+    <ng-container *ngFor="let tag of tags">
+        <div (click)="toggleTag(tag)" class="tag">
+            <span>
+                {{ tag }}
+            </span>
+        </div>
+    </ng-container>
+</div>

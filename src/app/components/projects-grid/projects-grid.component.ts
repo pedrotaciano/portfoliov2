@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { wrapGrid } from 'animate-css-grid';
 import { ProjectsService } from 'src/app/services/projects.service';
-import { Project } from 'src/models/project';
 
 @Component({
   selector: 'app-projects-grid',
@@ -8,14 +8,11 @@ import { Project } from 'src/models/project';
   styleUrls: ['./projects-grid.component.scss'],
 })
 export class ProjectsGridComponent implements OnInit {
-  projects: Project[] = [];
+  projects$ = this.projectsService.projects$;
+  @ViewChild('projects-grid') grid: ElementRef;
   constructor(private projectsService: ProjectsService) {}
 
-  ngOnInit(): void {
-    this.getProjects();
-  }
-
-  getProjects(): void {
-    this.projects = this.projectsService.getProjects();
+  ngOnInit() {
+    wrapGrid(this.grid.nativeElement);
   }
 }

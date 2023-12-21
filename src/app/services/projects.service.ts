@@ -1,15 +1,18 @@
 import { Injectable } from '@angular/core';
-import { Project } from 'src/models/project';
+import { BehaviorSubject, Observable, Subject } from 'rxjs';
+import { ETags, Project } from 'src/models/project';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ProjectsService {
-  projects: Project[] = [
+  private allProjects: Project[] = [
     {
       id: 'open-circle',
       title: 'Open Circle',
-      tags: ['UI/UX', 'Development', 'Branding'],
+      description: '',
+      tags: [ETags.UIUX, ETags.Development, ETags.Branding],
+      imagesUrls: [''],
       isLocked: false,
       isHidden: false,
       createdOn: new Date('2023-11-01'),
@@ -17,15 +20,19 @@ export class ProjectsService {
     {
       id: 'grippy',
       title: 'Grippy',
-      tags: ['UI/UX', 'Development', 'Branding'],
+      description: '',
+      tags: [ETags.UIUX, ETags.Development, ETags.Branding],
+      imagesUrls: [''],
       isLocked: true,
       isHidden: false,
-      createdOn: new Date('2024-01-01')
+      createdOn: new Date('2024-01-01'),
     },
     {
       id: 'keno',
       title: 'Keno',
-      tags: ['UI/UX', 'Development', 'Branding'],
+      description: '',
+      tags: [ETags.UIUX, ETags.Development, ETags.Branding],
+      imagesUrls: [''],
       isLocked: true,
       isHidden: false,
       createdOn: new Date('2022-01-01'),
@@ -33,7 +40,9 @@ export class ProjectsService {
     {
       id: 'hora-de-comer',
       title: 'Hora de Comer',
-      tags: ['UI/UX'],
+      description: '',
+      tags: [ETags.UIUX],
+      imagesUrls: [''],
       isLocked: false,
       isHidden: false,
       createdOn: new Date('2022-06-01'),
@@ -41,7 +50,7 @@ export class ProjectsService {
     // {
     //   id: 'pauliceia',
     //   title: 'Pauliceia',
-    //   tags: ['UI/UX', 'Development'],
+    //   tags: [ETags.UIUX, ETags.Development],
     //   isLocked: false,
     //   isHidden: false,
     //   createdOn: new Date('2023-12-01'),
@@ -49,7 +58,9 @@ export class ProjectsService {
     {
       id: 'sinco',
       title: 'Sinco Lab.',
-      tags: ['UI/UX', 'Development', 'Branding'],
+      description: '',
+      tags: [ETags.UIUX, ETags.Development, ETags.Branding],
+      imagesUrls: [''],
       isLocked: true,
       isHidden: false,
       createdOn: new Date('2023-12-01'),
@@ -57,26 +68,47 @@ export class ProjectsService {
     {
       id: 'pine-dashboard',
       title: 'Banco Pine',
-      tags: ['UI/UX', 'Development'],
+      description: '',
+      tags: [ETags.UIUX, ETags.Development],
+      imagesUrls: [''],
       isLocked: false,
       isHidden: false,
       createdOn: new Date('2021-09-01'),
-    }
+    },
     // {
     //   id: 'app-pine',
     //   title: 'App Pine',
-    //   tags: ['UI/UX'],
+    //   tags: [ETags.UIUX],
     //   isLocked: false,
     //   isHidden: false,
     //   createdOn: new Date('2021-06-01'),
     // },
   ];
-
-  getProjects(): Project[] {
-    return this.projects;
-  }
+  private activeTags: ETags[] = [];
+  projects$ = new BehaviorSubject<Project[]>(this.allProjects);
 
   getProjectById(id: string): Project | undefined {
-    return this.projects.find((project) => project.id === id);
+    return this.allProjects.find((project) => project.id === id);
+  }
+
+  toggleTag(tag: ETags): void {
+    if (this.activeTags.includes(tag)) this.removeTag(tag);
+    else this.addTag(tag);
+  
+    this.projects$.next(this.filterProjects());
+  }
+
+  addTag(tag: ETags): void {
+    this.activeTags.push(tag);
+  }
+
+  removeTag(tag: ETags): void {
+    this.activeTags = this.activeTags.filter((activeTag) => activeTag !== tag);
+  }
+
+  filterProjects(): Project[] {
+    return this.allProjects.filter((project) =>
+      this.activeTags.every((tag) => project.tags.includes(tag))
+    );
   }
 }

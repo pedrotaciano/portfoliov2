@@ -14,6 +14,18 @@ body {
   background: var(--background);
 }
 
+.container {
+  padding: 0 5%;
+
+  @media (min-width: 768px) {
+    padding: 0 10%;
+  }
+
+  @media (min-width: 1024px) {
+    padding: 0 15%;
+  }
+}
+
 .fade-in-sm {
   animation: fadeIn 0.7s ease-in-out forwards;
   will-change: opacity;

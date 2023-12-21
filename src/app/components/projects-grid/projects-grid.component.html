@@ -1,5 +1,8 @@
-<div class="projects-grid">
-    <ng-container *ngFor="let project of projects">
-        <app-project-card [project]="project" ></app-project-card>
-    </ng-container>
+<div class="container">
+    <app-projects-filter></app-projects-filter>
+    <div class="projects-grid">
+        <ng-container *ngFor="let project of (projects$ | async)">
+            <app-project-card [project]="project"></app-project-card>
+        </ng-container>
+    </div>
 </div>

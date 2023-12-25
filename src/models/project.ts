@@ -9,6 +9,11 @@ export type Project = {
     createdOn: Date;
 }
 
+export type Tag = {
+    name: ETags;
+    isActive: boolean;
+}
+
 export enum ETags {
     UIUX = 'UI/UX',
     Development = 'Development',

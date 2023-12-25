@@ -13,6 +13,6 @@ export class ProjectsGridComponent implements OnInit {
   constructor(private projectsService: ProjectsService) {}
 
   ngOnInit() {
-    wrapGrid(this.grid.nativeElement);
+    wrapGrid(this.grid.nativeElement, {easing: 'easeInOut'}).forceGridAnimation();
   }
 }

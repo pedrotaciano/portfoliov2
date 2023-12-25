@@ -43,22 +43,22 @@ body {
 
 .delay-sm {
   opacity: 0;
-  animation-delay: .08s;
+  animation-delay: 0.08s;
 }
 
 .delay-md {
   opacity: 0;
-  animation-delay: .2s;
+  animation-delay: 0.2s;
 }
 
 .delay-lg {
   opacity: 0;
-  animation-delay: .5s;
+  animation-delay: 0.5s;
 }
 
 .delay-xl {
   opacity: 0;
-  animation-delay: .8s;
+  animation-delay: 0.8s;
 }
 
 @keyframes fadeIn {
@@ -71,4 +71,8 @@ body {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+.hidden {
+  display: none;
 }

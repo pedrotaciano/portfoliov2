@@ -65,7 +65,7 @@
       img { width: 1.6rem;}
     }
     &:hover {
-      cursor: url('/assets/icons/lock.svg'), not-allowed;
+      cursor: url('/assets/icons/unlock.svg'), not-allowed;
     }
   }
 
@@ -111,8 +111,4 @@
   50% {
     transform: rotate(45deg);
   }
-}
-
-.hidden {
-  display: none;
 }

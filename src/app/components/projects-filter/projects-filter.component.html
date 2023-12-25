@@ -1,8 +1,8 @@
 <div class="tag-wrapper">
     <ng-container *ngFor="let tag of tags">
-        <div (click)="toggleTag(tag)" class="tag">
+        <div [ngClass]="{ 'active': tag.isActive }" (click)="toggleTag(tag.name)" class="tag">
             <span>
-                {{ tag }}
+                {{ tag.name }}
             </span>
         </div>
     </ng-container>

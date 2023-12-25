@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable, Subject } from 'rxjs';
-import { ETags, Project } from 'src/models/project';
+import { BehaviorSubject } from 'rxjs';
+import { ETags, Project, Tag } from 'src/models/project';
 
 @Injectable({
   providedIn: 'root',
@@ -84,31 +84,27 @@ export class ProjectsService {
     //   createdOn: new Date('2021-06-01'),
     // },
   ];
-  private activeTags: ETags[] = [];
+  private allTags: Tag[] = [];
   projects$ = new BehaviorSubject<Project[]>(this.allProjects);
+  tags$ = new BehaviorSubject<Tag[]>(this.allTags);
 
   getProjectById(id: string): Project | undefined {
     return this.allProjects.find((project) => project.id === id);
   }
 
-  toggleTag(tag: ETags): void {
-    if (this.activeTags.includes(tag)) this.removeTag(tag);
-    else this.addTag(tag);
-  
+  toggleTag(tagName: ETags): void {
+    this.allTags = this.allTags.map((t) => {
+      if (t.name === tagName) {
+        t.isActive = !t.isActive;
+      }
+      return t;
+    });
     this.projects$.next(this.filterProjects());
-  }
-
-  addTag(tag: ETags): void {
-    this.activeTags.push(tag);
-  }
-
-  removeTag(tag: ETags): void {
-    this.activeTags = this.activeTags.filter((activeTag) => activeTag !== tag);
   }
 
   filterProjects(): Project[] {
     return this.allProjects.filter((project) =>
-      this.activeTags.every((tag) => project.tags.includes(tag))
+      project.tags.some((tag) => this.allTags.find((t) => t.name === tag)?.isActive)
     );
   }
 }

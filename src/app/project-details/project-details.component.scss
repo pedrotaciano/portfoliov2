@@ -1,0 +1,57 @@
+.project-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  .project-cover {
+    width: 100%;
+    height: 70vh;
+    overflow: hidden;
+
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .project-info {
+    display: grid;
+    grid-template-columns: repeat(3, 33%);
+    width: 100%;
+    &__item {
+      display: flex;
+      flex-direction: column;
+      font-size: 1.5rem;
+
+      &__title {
+        color: rgba(var(--dark-grey), 0.6);
+        padding-bottom: 1rem;
+        font-size: inherit;
+      }
+
+      &__value {
+        font-size: inherit;
+      }
+    }
+  }
+
+  &__description {
+    // Styles for the project description
+  }
+
+  &__image {
+    // Styles for the project image
+  }
+
+  &__info {
+    // Styles for the project info section
+  }
+
+  &__info-item {
+    // Styles for each item in the project info section
+  }
+
+  &__button {
+    // Styles for the project button
+  }
+}

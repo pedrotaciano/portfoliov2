@@ -3,10 +3,10 @@ export type Project = {
     title: string;
     description: string;
     tags: ETags[];
-    imagesUrls: string[];
+    imageNames: string[];
     isLocked: boolean;
     isHidden: boolean;
-    createdOn: Date;
+    date: Date;
 }
 
 export type Tag = {

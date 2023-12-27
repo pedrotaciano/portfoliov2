@@ -1,2 +1,29 @@
-<p>project-details works!</p>
-<pre>{{ project | json }}</pre>
+<div class="project-container">
+
+    <div class="project-cover" [ngStyle]="{ 'background-image': 'url(assets/images/projects/' + project.id + '/thumbnail.png)' }"></div>
+
+    <div class="project-info">
+            <div class="project-info__item">
+                <div class="project-info__item__value">{{project.title}}</div>
+                <div class="project-info__item__value">{{project.description}}</div>
+            </div>
+            <div class="project-info__item">
+                <div class="project-info__item__title">Date</div>
+                <div class="project-info__item__value">{{project.date}}</div>
+            </div>
+            <div class="project-info__item">
+                <div class="project-info__item__title">Tags</div>
+                <div class="project-info__item__value" *ngFor="let tag of project.tags">{{ tag }}</div>
+            </div>
+    </div>
+
+    <div class="project-title">
+        <h1>{{project.title}}</h1>
+    </div>
+
+    <div class="project-images">
+        <div class="project-images__item" *ngFor="let image of project.imageNames">
+            <img [src]="'assets/images/projects/' + project.id + '/' + image" alt="project image">
+        </div>
+    </div>
+</div>

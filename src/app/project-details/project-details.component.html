@@ -1,18 +1,28 @@
 <div class="project-container">
-
     <div class="project-cover" [ngStyle]="{ 'background-image': 'url(assets/images/projects/' + project.id + '/thumbnail.png)' }"></div>
 
     <div class="project-info">
             <div class="project-info__item">
-                <div class="project-info__item__value">{{project.title}}</div>
-                <div class="project-info__item__value">{{project.description}}</div>
+                <div class="project-info__item__title">Client</div>
+                <div class="project-info__item__value">{{ project.title }}</div>
+            </div>
+            <div class="project-info__item">
+                <div class="project-info__item__title">Link</div>
+                <div class="project-info__item__value">
+                    <a *ngIf="project.link !== ''" [href]="project.link">
+                        {{ project.link }}
+                    </a>
+                    <ng-container *ngIf="project.link === ''">
+                        N/A
+                    </ng-container>
+                </div>
             </div>
             <div class="project-info__item">
                 <div class="project-info__item__title">Date</div>
-                <div class="project-info__item__value">{{project.date}}</div>
+                <div class="project-info__item__value">{{ formatDate(project.date)}}</div>
             </div>
             <div class="project-info__item">
-                <div class="project-info__item__title">Tags</div>
+                <div class="project-info__item__title">Role</div>
                 <div class="project-info__item__value" *ngFor="let tag of project.tags">{{ tag }}</div>
             </div>
     </div>

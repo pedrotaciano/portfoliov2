@@ -6,6 +6,7 @@ export type Project = {
     imageNames: string[];
     isLocked: boolean;
     isHidden: boolean;
+    link: string;
     date: Date;
 }
 

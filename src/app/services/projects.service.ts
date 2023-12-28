@@ -15,6 +15,7 @@ export class ProjectsService {
       imageNames: ['image-1.jpg', 'image-2.jpg', 'image-3.jpg'],
       isLocked: false,
       isHidden: false,
+      link: 'https://opencircle.vercel.app',
       date: new Date('2023-11-01'),
     },
     {
@@ -25,6 +26,7 @@ export class ProjectsService {
       imageNames: ['image-1.jpg', 'image-2.jpg', 'image-3.jpg'],
       isLocked: true,
       isHidden: false,
+      link: '',
       date: new Date('2024-01-01'),
     },
     {
@@ -35,6 +37,7 @@ export class ProjectsService {
       imageNames: ['image-1.jpg', 'image-2.jpg', 'image-3.jpg'],
       isLocked: true,
       isHidden: false,
+      link: '',
       date: new Date('2022-01-01'),
     },
     {
@@ -45,6 +48,7 @@ export class ProjectsService {
       imageNames: ['image-1.jpg', 'image-2.jpg', 'image-3.jpg'],
       isLocked: false,
       isHidden: false,
+      link: '',
       date: new Date('2022-06-01'),
     },
     // {
@@ -53,6 +57,7 @@ export class ProjectsService {
     //   tags: [ETags.UIUX, ETags.Development],
     //   isLocked: false,
     //   isHidden: false,
+    //   link: '',
     //   date: new Date('2023-12-01'),
     // },
     {
@@ -63,6 +68,7 @@ export class ProjectsService {
       imageNames: ['image-1.jpg', 'image-2.jpg', 'image-3.jpg'],
       isLocked: true,
       isHidden: false,
+      link: '',
       date: new Date('2023-12-01'),
     },
     {
@@ -73,6 +79,7 @@ export class ProjectsService {
       imageNames: ['image-1.jpg', 'image-2.jpg', 'image-3.jpg'],
       isLocked: false,
       isHidden: false,
+      link: '',
       date: new Date('2021-09-01'),
     },
     // {
@@ -81,6 +88,7 @@ export class ProjectsService {
     //   tags: [ETags.UIUX],
     //   isLocked: false,
     //   isHidden: false,
+    //   link: '',
     //   date: new Date('2021-06-01'),
     // },
   ];

@@ -11,7 +11,10 @@ import { Project } from 'src/models/project';
 export class ProjectDetailsComponent implements OnInit {
   projectId: string;
   project: Project;
-  constructor(private projectsService: ProjectsService, private route: ActivatedRoute) {}
+  constructor(
+    private projectsService: ProjectsService,
+    private route: ActivatedRoute
+  ) {}
 
   ngOnInit() {
     this.projectId = this.getProjectId();
@@ -24,5 +27,9 @@ export class ProjectDetailsComponent implements OnInit {
 
   getProjectById() {
     this.project = this.projectsService.getProjectById(this.projectId);
+  }
+
+  formatDate(date: Date) {
+    return new Date(date).toLocaleDateString();
   }
 }

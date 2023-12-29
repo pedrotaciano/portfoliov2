@@ -76,7 +76,7 @@ export class ProjectsService {
       title: 'Banco Pine',
       description: '',
       tags: [ETags.UIUX, ETags.Development],
-      imageNames: ['image-1.jpg', 'image-2.jpg', 'image-3.jpg'],
+      imageNames: ['image-1.jpg', 'image-2.jpg'],
       isLocked: false,
       isHidden: false,
       link: '',

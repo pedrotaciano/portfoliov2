@@ -7,7 +7,12 @@ import { ProjectsService } from 'src/app/services/projects.service';
   templateUrl: './projects-grid.component.html',
   styleUrls: ['./projects-grid.component.scss'],
 })
-export class ProjectsGridComponent {
+export class ProjectsGridComponent implements OnInit {
   projects$ = this.projectsService.projects$;
+  @ViewChild('projects-grid') grid: ElementRef;
   constructor(private projectsService: ProjectsService) {}
+
+  ngOnInit() {
+    wrapGrid(this.grid.nativeElement, {easing: 'easeInOut'}).forceGridAnimation();
+  }
 }

@@ -56,7 +56,7 @@
     padding: 5vh 2rem 0 0;
 
     h1 {
-      font-size: 18rem;
+      font-size: clamp(20%, 12vw, 18rem);;
       font-weight: 500;
     }
   }

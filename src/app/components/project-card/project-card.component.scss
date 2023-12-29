@@ -61,7 +61,7 @@
 
   &.locked {
     .card__header__button {
-      background: var(--dark-grey) !important;
+      background: rgb(var(--dark-grey)) !important;
       img { width: 1.6rem;}
     }
     &:hover {

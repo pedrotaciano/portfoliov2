@@ -115,4 +115,9 @@ export class ProjectsService {
       project.tags.some((tag) => this.allTags.find((t) => t.name === tag)?.isActive)
     );
   }
+
+  getProjectName(id: string): string {
+    const project = this.getProjectById(id);
+    return project ? project.title : '';
+  }
 }

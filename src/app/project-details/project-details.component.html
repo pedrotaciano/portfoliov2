@@ -1,4 +1,4 @@
-<div class="project-container">
+<div *ngIf="!project.isLocked" class="project-container">
     <div class="project-cover" [ngStyle]="{ 'background-image': 'url(assets/images/projects/' + project.id + '/thumbnail.jpg)' }"></div>
 
     <div class="project-info">

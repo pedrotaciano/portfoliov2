@@ -1,32 +1,55 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NavItem } from '../../../models/nav';
 import { Router } from '@angular/router';
+import { ProjectsService } from 'src/app/services/projects.service';
 
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss']
 })
-export class NavbarComponent {
+export class NavbarComponent implements OnInit {
   navList: NavItem[] = [
     {
       label: 'Home',
-      path: '',
+      path: '/',
       selected: true,
     },
     {
       label: 'Profile',
-      path: 'profile',
+      path: '/profile',
       selected: false,
     },
     {
       label: 'Contact',
-      path: 'contact',
+      path: '/contact',
       selected: false,
     },
   ];
+  projectId?: string;
+  projectName?: string;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private projectsServices: ProjectsService) {}
+
+  ngOnInit() {
+    this.routeHandler();
+  }
+
+  routeHandler() {
+    this.router.events.subscribe(() => {
+      const path = this.router.url;
+
+      this.navList.forEach(item => {
+        item.selected = item.path === path;
+      });
+
+      this.projectId = path.includes('/project') ? path.split('/')[2] : undefined;
+      
+      if (this.projectId) {
+        this.projectName = this.projectsServices.getProjectName(this.projectId);
+      }
+    });
+  }
 
   onClickNavItem(navItem: NavItem) {
     this.changeSelectedNavItem(navItem);

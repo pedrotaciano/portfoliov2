@@ -1,7 +1,19 @@
-<div class="navbar">
+<div *ngIf="!projectId; else projectNav" class="navbar">
     <ng-container *ngFor="let item of navList">
-        <div (click)="onClickNavItem(item)" [ngClass]="{ link: true, selected: item.selected}" class="link">
+        <div (click)="onClickNavItem(item)" [ngClass]="{ link: true, selected: item.selected}">
             <p>{{ item.label }}</p>
         </div>
     </ng-container>
 </div>
+
+<ng-template #projectNav>
+    <div class="navbar">
+        <div class="link">
+            <p>{{ projectName }}</p>
+        </div>
+
+        <div class="link selected" (click)="onClickNavItem(navList[0])">
+            <p>Back</p>
+        </div>
+    </div>
+</ng-template>

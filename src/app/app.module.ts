@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { BodyComponent } from './body/body.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -10,6 +9,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { ProjectCardComponent } from './components/project-card/project-card.component';
 import { ProjectDetailsComponent } from './project-details/project-details.component';
 import { ProjectsFilterComponent } from './components/projects-filter/projects-filter.component';
+import { ContactCtaComponent } from './components/contact-cta/contact-cta.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +20,8 @@ import { ProjectsFilterComponent } from './components/projects-filter/projects-f
     ProfileComponent,
     ProjectCardComponent,
     ProjectDetailsComponent,
-    ProjectsFilterComponent
+    ProjectsFilterComponent,
+    ContactCtaComponent
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],

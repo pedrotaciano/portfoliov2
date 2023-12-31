@@ -1,4 +1,21 @@
 .contact {
     height: 100vh;
     background: var(--background);
+
+    &__social-icons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 3.2rem;
+        margin-top: 3.2rem;
+
+        &__icon {
+            img {
+                width: 2rem;
+                height: 2rem;
+                object-fit: contain;
+                aspect-ratio: 1/1;
+            }
+        }
+    }
 }

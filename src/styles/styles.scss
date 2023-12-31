@@ -6,6 +6,29 @@
   font-size: 62.5%;
 }
 
+
+// Scrollbar
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: rgb(var(--background));
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(var(--dark-grey), 0.4);
+  // border-radius: 1rem;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(var(--dark-grey), 0.6);
+}
+
 body {
   font-family: "Helvetica Neue LT Pro", "Inter", sans-serif;
   text-decoration: none;
@@ -89,6 +112,7 @@ body {
     color: rgb(var(--dark-grey));
     border-radius: 1.6rem;
     flex-direction: column;
+    text-decoration: none;
 
     height: 50vh;
     width: 100%;
@@ -109,5 +133,9 @@ body {
         font-weight: 500;
         text-decoration: none;
         font-size: 3rem;
+
+        &:hover {
+            color: rgba(var(--dark-grey), 0.9);
+          }
     }
 }

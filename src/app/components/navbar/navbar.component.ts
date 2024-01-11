@@ -6,14 +6,14 @@ import { ProjectsService } from 'src/app/services/projects.service';
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.scss']
+  styleUrls: ['./navbar.component.scss'],
 })
 export class NavbarComponent implements OnInit {
   navList: NavItem[] = [
     {
       label: 'Home',
       path: '/',
-      selected: true,
+      selected: false,
     },
     {
       label: 'Profile',
@@ -29,7 +29,10 @@ export class NavbarComponent implements OnInit {
   projectId?: string;
   projectName?: string;
 
-  constructor(private router: Router, private projectsServices: ProjectsService) {}
+  constructor(
+    private router: Router,
+    private projectsServices: ProjectsService
+  ) {}
 
   ngOnInit() {
     this.routeHandler();
@@ -39,16 +42,35 @@ export class NavbarComponent implements OnInit {
     this.router.events.subscribe(() => {
       const path = this.router.url;
 
-      this.navList.forEach(item => {
-        item.selected = item.path === path;
-      });
+      this.handleProjectPage(path);
+      this.handleStandardPage(path);
+    });
+  }
 
-      this.projectId = path.includes('/project') ? path.split('/')[2] : undefined;
-      
-      if (this.projectId) {
-        this.projectName = this.projectsServices.getProjectName(this.projectId);
+  handleProjectPage(path: string) {
+    if (path.includes('project')) {
+      this.projectId = this.getProjectIdByRoute(path);
+      this.projectName = this.projectsServices.getProjectName(this.projectId);
+    }
+  }
+
+  getProjectIdByRoute(path: string) {
+    return path.split('/')[2];
+  }
+
+  handleStandardPage(path: string) {
+    let routerMatched = false;
+
+    this.navList.forEach((navItem) => {
+      if (navItem.path === path) {
+        this.changeSelectedNavItem(navItem);
+        routerMatched = true;
       }
     });
+
+    if (!routerMatched) {
+      this.changeSelectedNavItem(this.navList[0]);
+    }
   }
 
   onClickNavItem(navItem: NavItem) {
@@ -57,7 +79,7 @@ export class NavbarComponent implements OnInit {
   }
 
   changeSelectedNavItem(navItem: NavItem) {
-    this.navList.forEach(item => item.selected = false);
+    this.navList.forEach((item) => (item.selected = false));
     navItem.selected = true;
   }
 

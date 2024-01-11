@@ -31,6 +31,10 @@
       background: var(--background);
     }
 
+    &.cursor-default {
+      cursor: default;
+    }
+
     p {
       font-size: 15px;
     }

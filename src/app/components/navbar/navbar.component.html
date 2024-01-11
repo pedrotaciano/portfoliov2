@@ -1,6 +1,6 @@
 <div *ngIf="!projectId; else projectNav" class="navbar">
     <ng-container *ngFor="let item of navList">
-        <div (click)="onClickNavItem(item)" [ngClass]="{ link: true, selected: item.selected}">
+        <div (click)="onClickNavItem(item)" [ngClass]="{ link: true, selected: item.selected }">
             <p>{{ item.label }}</p>
         </div>
     </ng-container>
@@ -8,7 +8,7 @@
 
 <ng-template #projectNav>
     <div class="navbar">
-        <div class="link">
+        <div class="link cursor-default">
             <p>{{ projectName }}</p>
         </div>
 

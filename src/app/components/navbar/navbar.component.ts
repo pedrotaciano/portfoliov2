@@ -81,6 +81,9 @@ export class NavbarComponent implements OnInit {
   changeSelectedNavItem(navItem: NavItem) {
     this.navList.forEach((item) => (item.selected = false));
     navItem.selected = true;
+    window.scroll({
+      top: 0,
+    });
   }
 
   changeRoute(path: string) {

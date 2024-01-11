@@ -1,43 +1,43 @@
 .hero {
-    height: 90vh;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .hero__text {
+    h1 {
+      font-size: 4.8rem;
+      line-height: 5rem;
+      letter-spacing: -0.1rem;
+      font-weight: 500;
+      color: rgb(var(--dark-grey));
+      text-align: center;
+
+      margin-bottom: 5.2rem;
+      width: min(49vw, 50rem);
+      text-wrap: balance;
+    }
+  }
+
+  .hero__social-wrapper {
     display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    gap: 3.2rem;
 
-    .hero__text {
-        h1 {
-            font-size: 4.8rem;
-            line-height: 5rem;
-            letter-spacing: -0.1rem;
-            font-weight: 500;
-            color: rgb(var(--dark-grey));
-            text-align: center;
-
-            margin-bottom: 5.2rem;
-            width: max(49vw, 50rem);
-            text-wrap: balance;
-        }
+    .hero__social-wrapper__icon {
+      img {
+        width: 2rem;
+        height: 2rem;
+        object-fit: contain;
+        aspect-ratio: 1/1;
+      }
     }
-
-    .hero__social-wrapper {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 3.2rem;
-
-        .hero__social-wrapper__icon {
-            img {
-                width: 2rem;
-                height: 2rem;
-                object-fit: contain;
-                aspect-ratio: 1/1;
-            }
-        }
-    }
+  }
 }
 
 .contact-cta {
-    margin-top: 5.2rem;
-    margin-bottom: 5.2rem;
+  margin-top: 5.2rem;
+  margin-bottom: 5.2rem;
 }

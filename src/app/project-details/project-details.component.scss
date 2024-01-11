@@ -1,21 +1,20 @@
-
 .project-container {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    margin-top: -5.2rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: -5.2rem;
 
-    .project-cover {
-      width: 100%;
-      height: 55vh;
-      overflow: hidden;
-    
+  .project-cover {
+    width: 100%;
+    height: 55vh;
+    overflow: hidden;
+
     //   background-attachment: fixed;
-      background-attachment: local;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
-    }
+    background-attachment: local;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
 
   .project-info {
     display: grid;
@@ -56,7 +55,7 @@
     padding: 5vh 2rem 0 0;
 
     h1 {
-      font-size: clamp(20%, 12vw, 18rem);;
+      font-size: clamp(20%, 12vw, 18rem);
       font-weight: 500;
     }
   }

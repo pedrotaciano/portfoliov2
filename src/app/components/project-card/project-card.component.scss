@@ -40,7 +40,6 @@
 
       a {
         transform: translateY(-0.5rem);
-
       }
     }
 
@@ -66,10 +65,12 @@
   &.locked {
     .card__header__button {
       background: rgb(var(--dark-grey)) !important;
-      img { width: 1.6rem;}
+      img {
+        width: 1.6rem;
+      }
     }
     &:hover {
-      cursor: url('/assets/icons/lock.svg'), not-allowed;
+      cursor: url("/assets/icons/lock.svg"), not-allowed;
     }
   }
 
@@ -89,7 +90,6 @@
       }
     }
   }
-
 }
 
 .mobile-title {
@@ -109,7 +109,8 @@
 }
 
 @keyframes shake {
-  0%, 100% {
+  0%,
+  100% {
     transform: rotate(0deg);
   }
   50% {

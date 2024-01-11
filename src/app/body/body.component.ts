@@ -1,5 +1,4 @@
-import { AfterViewInit, Component } from '@angular/core';
-import { min } from 'rxjs';
+import { AfterViewInit, Component, Host, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-body',
@@ -9,9 +8,10 @@ import { min } from 'rxjs';
 export class BodyComponent implements AfterViewInit {
 
   ngAfterViewInit(): void {
-    // this.setFontSize();
+    this.setFontSize();
   }
 
+  @HostListener('window:resize', ['$event'])
   setFontSize() {
     const windowWidth = window.innerWidth;
     const minFontSize = 40;

@@ -9,30 +9,16 @@ import { Project } from 'src/models/project';
 })
 export class ProjectCardComponent {
   @Input() project: Project;
-  shakeIcon = false;
+  showLockedTerminal = false;
 
   constructor(private router: Router) {}
 
-  onClickCard() {
-    console.log('Clicked card', this.project);
-    
+  onClickCard() {    
     if (this.project.isLocked) {
-      this.toggleShake();
+      this.showLockedTerminal = true;
       return;
     }
 
     this.router.navigate(['/project/', this.project.id]);
-  }
-
-  toggleShake() {
-    console.log('Shake icon', this.project, this.shakeIcon);
-    
-    const animationDuration = 800;
-    this.shakeIcon = true;
-
-    // setTimeout(() => {
-    //   this.shakeIcon = false;
-    // }, animationDuration); // Should match the duration of the animation
-    console.log('Shake icon', this.project, this.shakeIcon);
   }
 }

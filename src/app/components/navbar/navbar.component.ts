@@ -41,7 +41,6 @@ export class NavbarComponent implements OnInit {
   routeHandler() {
     this.router.events.subscribe(() => {
       const path = this.router.url;
-      console.log(path);
       
       this.handleProjectPage(path);
       if (!this.projectId) this.handleStandardPage(path);

@@ -41,9 +41,10 @@ export class NavbarComponent implements OnInit {
   routeHandler() {
     this.router.events.subscribe(() => {
       const path = this.router.url;
-
+      console.log(path);
+      
       this.handleProjectPage(path);
-      this.handleStandardPage(path);
+      if (!this.projectId) this.handleStandardPage(path);
     });
   }
 
@@ -51,6 +52,10 @@ export class NavbarComponent implements OnInit {
     if (path.includes('project')) {
       this.projectId = this.getProjectIdByRoute(path);
       this.projectName = this.projectsServices.getProjectName(this.projectId);
+    }
+
+    else {
+      this.resetVariables();
     }
   }
 
@@ -73,11 +78,6 @@ export class NavbarComponent implements OnInit {
     }
   }
 
-  onClickNavItem(navItem: NavItem) {
-    this.changeSelectedNavItem(navItem);
-    this.changeRoute(navItem.path);
-  }
-
   changeSelectedNavItem(navItem: NavItem) {
     this.navList.forEach((item) => (item.selected = false));
     navItem.selected = true;
@@ -88,5 +88,10 @@ export class NavbarComponent implements OnInit {
 
   changeRoute(path: string) {
     this.router.navigate([path]);
+  }
+
+  resetVariables() {
+    this.projectId = undefined;
+    this.projectName = undefined;
   }
 }

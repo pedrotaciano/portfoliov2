@@ -1,6 +1,6 @@
 <div *ngIf="!projectId; else projectNav" class="navbar">
     <ng-container *ngFor="let item of navList">
-        <div (click)="onClickNavItem(item)" [ngClass]="{ link: true, selected: item.selected }">
+        <div (click)="changeRoute(item.path)" [ngClass]="{ link: true, selected: item.selected }">
             <p>{{ item.label }}</p>
         </div>
     </ng-container>
@@ -12,7 +12,7 @@
             <p>{{ projectName }}</p>
         </div>
 
-        <div class="link selected" (click)="onClickNavItem(navList[0])">
+        <div class="link selected" (click)="changeRoute(navList[0].path)">
             <p>Back</p>
         </div>
     </div>

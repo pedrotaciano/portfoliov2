@@ -6,25 +6,15 @@
   font-size: 62.5%;
 }
 
-
-// Scrollbar
-/* width */
 ::-webkit-scrollbar {
   width: 10px;
 }
-
-/* Track */
 ::-webkit-scrollbar-track {
   background: rgb(var(--background));
 }
-
-/* Handle */
 ::-webkit-scrollbar-thumb {
   background: rgb(var(--dark-grey), 0.4);
-  // border-radius: 1rem;
 }
-
-/* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: rgb(var(--dark-grey), 0.6);
 }
@@ -35,10 +25,11 @@ body {
   color: rgb(var(--dark-grey));
 
   background: var(--background);
+  overflow-x: hidden;
 }
 
 .container {
-  margin-top: -5.2rem;
+  // margin-top: -5.2rem;
   padding: 0 5%;
 
   @media (min-width: 768px) {

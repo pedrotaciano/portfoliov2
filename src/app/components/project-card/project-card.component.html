@@ -3,7 +3,7 @@
         <div class="card__header__title">
             <p>{{ project.title }}</p>
         </div>
-        <div [ngClass]="{ 'shake-aniation': shakeIcon, 'card__header__button': true }">
+        <div class="card__header__button">
             <a *ngIf="!project.isLocked" [routerLink]="['/project', project.id]">
                 <img src="assets/icons/arrow.svg " alt="arrow">
             </a>

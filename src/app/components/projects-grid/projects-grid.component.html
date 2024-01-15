@@ -1,5 +1,4 @@
 <div class="container">
-    <app-projects-filter></app-projects-filter>
     <div class="projects-grid">
         <ng-container *ngFor="let project of (projects$ | async)">
             <app-project-card [ngClass]="{ 'hidden': project.isHidden }" [project]="project"></app-project-card>

@@ -4,7 +4,7 @@
             <p>{{ project.title }}</p>
         </div>
         <div class="card__header__button">
-            <a *ngIf="!project.isLocked" [routerLink]="['/project', project.id]">
+            <a *ngIf="!project.isLocked" [href]="'/project/' + project.id">
                 <img src="assets/icons/arrow.svg " alt="arrow">
             </a>
             <img *ngIf="project.isLocked" src="assets/icons/lock.svg " alt="lock">

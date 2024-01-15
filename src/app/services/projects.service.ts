@@ -114,30 +114,10 @@ export class ProjectsService {
       date: new Date('2021-06-01'),
     },
   ];
-  private allTags: Tag[] = [];
   projects$ = new BehaviorSubject<Project[]>(this.allProjects);
-  tags$ = new BehaviorSubject<Tag[]>(this.allTags);
 
   getProjectById(id: string): Project | undefined {
     return this.allProjects.find((project) => project.id === id);
-  }
-
-  toggleTag(tagName: ETags): void {
-    this.allTags = this.allTags.map((t) => {
-      if (t.name === tagName) {
-        t.isActive = !t.isActive;
-      }
-      return t;
-    });
-    this.projects$.next(this.filterProjects());
-  }
-
-  filterProjects(): Project[] {
-    return this.allProjects.filter((project) =>
-      project.tags.some(
-        (tag) => this.allTags.find((t) => t.name === tag)?.isActive
-      )
-    );
   }
 
   getProjectName(id: string): string {

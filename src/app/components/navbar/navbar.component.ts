@@ -15,11 +15,11 @@ export class NavbarComponent implements OnInit {
       path: '/',
       selected: false,
     },
-    {
+    */{
       label: 'Profile',
       path: '/profile',
       selected: false,
-    },
+    },*/
     {
       label: 'Contact',
       path: '/contact',

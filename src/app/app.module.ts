@@ -8,7 +8,6 @@ import { HomeComponent } from './home/home.component';
 import { ProfileComponent } from './profile/profile.component';
 import { ProjectCardComponent } from './components/project-card/project-card.component';
 import { ProjectDetailsComponent } from './project-details/project-details.component';
-import { ProjectsFilterComponent } from './components/projects-filter/projects-filter.component';
 import { ContactCtaComponent } from './components/contact-cta/contact-cta.component';
 
 @NgModule({
@@ -20,7 +19,6 @@ import { ContactCtaComponent } from './components/contact-cta/contact-cta.compon
     ProfileComponent,
     ProjectCardComponent,
     ProjectDetailsComponent,
-    ProjectsFilterComponent,
     ContactCtaComponent
   ],
   imports: [BrowserModule, AppRoutingModule],

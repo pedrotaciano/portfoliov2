@@ -33,15 +33,15 @@ export class ProjectsService {
       date: new Date('2024-01-01'),
     },
     {
-      id: 'keno',
-      title: 'Keno',
+      id: 'pine-dashboard',
+      title: 'Banco Pine',
       description: '',
-      tags: [ETags.UIUX, ETags.Development, ETags.Branding],
-      imageNames: ['image-1.jpg', 'image-2.jpg', 'image-3.jpg'],
-      isLocked: true,
+      tags: [ETags.UIUX, ETags.Development],
+      imageNames: ['image-1.jpg', 'image-2.jpg'],
+      isLocked: false,
       isHidden: false,
       links: [],
-      date: new Date('2022-01-01'),
+      date: new Date('2021-09-01'),
     },
     {
       id: 'hora-de-comer',
@@ -64,6 +64,32 @@ export class ProjectsService {
     //   date: new Date('2023-12-01'),
     // },
     {
+      id: 'hoobank',
+      title: 'Hoobank',
+      description: '',
+      tags: [ETags.Development],
+      imageNames: ['image-1.jpg', 'thumbnail.jpg', 'image-3.jpg'],
+      isLocked: false,
+      isHidden: false,
+      links: [
+        'https://hoobank-site.vercel.app/',
+        'https://github.com/pedrotaciano/hoobank',
+        'https://www.figma.com/community/file/1227560835659149296',
+      ],
+      date: new Date('2022-08-01'),
+    },
+    {
+      id: 'keno',
+      title: 'Keno',
+      description: '',
+      tags: [ETags.UIUX, ETags.Development, ETags.Branding],
+      imageNames: ['image-1.jpg', 'image-2.jpg', 'image-3.jpg'],
+      isLocked: true,
+      isHidden: false,
+      links: [],
+      date: new Date('2022-01-01'),
+    },
+    {
       id: 'sinco',
       title: 'Sinco Lab.',
       description: '',
@@ -75,50 +101,23 @@ export class ProjectsService {
       date: new Date('2023-12-01'),
     },
     {
-      id: 'pine-dashboard',
-      title: 'Banco Pine',
+      id: 'app-pine',
+      title: 'App Pine',
       description: '',
-      tags: [ETags.UIUX, ETags.Development],
-      imageNames: ['image-1.jpg', 'image-2.jpg'],
+      tags: [ETags.UIUX],
+      imageNames: ['image-1.jpg', 'image-2.jpg', 'image-3.jpg'],
       isLocked: false,
       isHidden: false,
-      links: [],
-      date: new Date('2021-09-01'),
+      links: [
+        'https://pitchdeck.hypermatic.com/slides/kr3r87hs45843/?token=MjYsdnRzLiYzNCQ8Vzg=',
+      ],
+      date: new Date('2021-06-01'),
     },
-    // {
-    //   id: 'app-pine',
-    //   title: 'App Pine',
-    //   tags: [ETags.UIUX],
-    //   isLocked: false,
-    //   isHidden: false,
-    //   links: ['',],
-    //   date: new Date('2021-06-01'),
-    // },
   ];
-  private allTags: Tag[] = [];
   projects$ = new BehaviorSubject<Project[]>(this.allProjects);
-  tags$ = new BehaviorSubject<Tag[]>(this.allTags);
 
   getProjectById(id: string): Project | undefined {
     return this.allProjects.find((project) => project.id === id);
-  }
-
-  toggleTag(tagName: ETags): void {
-    this.allTags = this.allTags.map((t) => {
-      if (t.name === tagName) {
-        t.isActive = !t.isActive;
-      }
-      return t;
-    });
-    this.projects$.next(this.filterProjects());
-  }
-
-  filterProjects(): Project[] {
-    return this.allProjects.filter((project) =>
-      project.tags.some(
-        (tag) => this.allTags.find((t) => t.name === tag)?.isActive
-      )
-    );
   }
 
   getProjectName(id: string): string {

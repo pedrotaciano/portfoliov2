@@ -11,15 +11,15 @@ import { ProjectsService } from 'src/app/services/projects.service';
 export class NavbarComponent implements OnInit {
   navList: NavItem[] = [
     {
-      label: 'Home',
+      label: 'Projects',
       path: '/',
       selected: false,
     },
-    {
-      label: 'Profile',
-      path: '/profile',
-      selected: false,
-    },
+    // {
+    //   label: 'Profile',
+    //   path: '/profile',
+    //   selected: false,
+    // },
     {
       label: 'Contact',
       path: '/contact',

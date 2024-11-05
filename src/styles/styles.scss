@@ -108,12 +108,6 @@ body {
     height: 50vh;
     width: 100%;
 
-    &:hover {
-        a {
-            color: rgba(var(--dark-grey), 0.8);
-          }
-    }
-
     h1 {
         font-size: 3rem;
         font-weight: 500;
@@ -126,7 +120,7 @@ body {
         font-size: 3rem;
 
         &:hover {
-            color: rgba(var(--dark-grey), 0.9);
+            color: rgba(var(--dark-grey), 0.8);
           }
     }
 }
